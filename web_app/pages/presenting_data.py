@@ -51,7 +51,8 @@ st.markdown(
 
 carat_bin = df['carat_bins'].unique()
 nrows, ncols = 5, 2
-fig, axs = plt.subplots(nrows, ncols, figsize=(12, 18), constrained_layout=True)
+
+fig, axs = plt.subplots(nrows, ncols, figsize=(12, 18))
 
 for i, category in enumerate(carat_bin):
     subset = df[df['carat_bins'] == category]
@@ -59,6 +60,7 @@ for i, category in enumerate(carat_bin):
     correlation = subset.select_dtypes(include=['number']).corr()
     mask = np.triu(np.ones_like(correlation, dtype=bool))
     ax = axs[i // ncols, i % ncols]
+    
     sns.heatmap(
         correlation, annot=True, mask=mask, cmap='coolwarm', vmin=-1, vmax=1,
         ax=ax, annot_kws={"size": 8}, cbar=False, fmt=".2f"
@@ -77,17 +79,21 @@ for i, category in enumerate(carat_bin):
         ax.set_xlabel('')
         ax.set_xticklabels([])
 
-fig.subplots_adjust(right=0.88)
+plt.subplots_adjust(top=0.95, right=0.88, hspace=0.3, wspace=0.2)
+
 cbar_ax = fig.add_axes([0.91, 0.15, 0.02, 0.7])
 sns.heatmap(
-    np.array([[0, 1], [-1, 0]]), cmap='coolwarm', vmin=-1, vmax=1, 
+    np.array([[0, 1], [-1, 0]]), cmap='coolwarm', vmin=-1, vmax=1,
     cbar=True, cbar_ax=cbar_ax, annot=False
 )
 cbar_ax.set_ylabel('Correlation', fontsize=12)
 
-plt.suptitle("Correlation Correct Calculated Carat", y=0.99, fontsize=16)
-plt.tight_layout(rect=[0, 0, 0.9, 1]) 
+# Add title
+plt.suptitle("Correlation Correct Calculated Carat", y=0.98, fontsize=16)
+
+# Display plot
 st.pyplot(fig)
+plt.close()  # Clean up the figure
 
 st.markdown(
     """

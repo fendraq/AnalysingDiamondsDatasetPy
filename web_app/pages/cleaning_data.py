@@ -78,7 +78,7 @@ with st.container():
         num_dups = df.duplicated().sum()
         st.write(f"Number of duplicate rows: {num_dups}")
 
-    with tabs[7]:
+    with tabs[6]:
         st.subheader("Quick Visualizations")
         num_cols = df.select_dtypes(include=['number']).columns
         if len(num_cols) > 0:
@@ -94,7 +94,7 @@ with st.container():
         else:
             st.write("No numeric columns to plot.")
 
-    with tabs[8]:
+    with tabs[7]:
         st.subheader("Correlation Heatmap")
         num_cols = df.select_dtypes(include=['number']).columns
         if len(num_cols) >= 2:

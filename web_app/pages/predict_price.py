@@ -22,7 +22,7 @@ ATTR_LABELS = {
 # Models
 MODEL_WITHOUT_BIN = 'models/model_without_bins.pkl'
 SCALER_WITHOUT_BINS = 'models/scaler_without_bins.pkl'
-MODEL_WITH_BIN = 'models/model_with_bins.pkl'
+MODEL_WITH_BIN = 'models/model_with_bins.pkl' 
 SCALER_WITH_BINS = 'models/scaler_with_bins.pkl'
 
 # Carat bins

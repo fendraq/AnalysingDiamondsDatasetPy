@@ -8,7 +8,7 @@ This project analyzes a diamond dataset to create price prediction models. It in
 - Data cleaning and preprocessing
 - Exploratory data analysis
 - Model training with different feature sets
-- Web interface for price predictions using Streamlit
+- Web interface for price predictions using Streamlit, deployed at: https://analysing-the-dataset-diamonds.streamlit.app/
 
 ## Installation
 
@@ -35,7 +35,7 @@ uv pip install -r requirements.txt
 ```
 
 5. Model files
-Model files aren't included at this stage but run 
+Model files aren't included at this stage. To train models run model_trainer.py
 
 ## Project Structure
 
@@ -44,9 +44,7 @@ Model files aren't included at this stage but run
 ├── web_app/              # Streamlit web application
 │   ├── pages/           # Application pages
 │   └── models/          # Trained models
-├── notebooks/            # Jupyter notebooks
-│   ├── data_cleaning.ipynb
-│   └── data_understanding.ipynb
+├── kunskapskontroll/            # Jupyter notebooks
 └── requirements.txt      # Project dependencies
 ```
 
@@ -54,7 +52,7 @@ Model files aren't included at this stage but run
 
 1. Start the Streamlit application:
 ```bash
-streamlit run web_app/Home.py
+streamlit run web_app/app.py
 ```
 
 2. Access the web interface at `http://localhost:8501`
@@ -67,7 +65,7 @@ The project uses two Random Forest models:
 - Basic model using standard features
 - Enhanced model incorporating carat bin features
 
-Model files are stored separately due to size constraints. Use `download_models.py` to fetch required files.
+Model files not included
 
 ## Features
 
@@ -85,11 +83,7 @@ Model files are stored separately due to size constraints. Use `download_models.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
-Your Name - your.email@example.com
+Peter - fendraq@gmail.com
 Project Link: [https://github.com/fendraq/AnalysingDiamondsDatasetPy](https://github.com/fendraq/AnalysingDiamondsDatasetPy)

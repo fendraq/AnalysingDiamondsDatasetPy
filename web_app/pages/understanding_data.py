@@ -190,7 +190,9 @@ plt.ylabel('Calculated Carat')
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
 
-st.pyplot(fig)
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2: 
+    st.pyplot(fig)
 
 st.markdown(
     """
